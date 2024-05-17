@@ -25,13 +25,11 @@ const landing = () => {
     <h1><Typewriter words={arr} cursor={true} cursorBlinking={true} /></h1>
     <button onClick={handleOnClick}>whoami</button>
     </div>
-    {/* <button style={{height:"100px"}}></button> */}
-    {/* <div style={{height:"30 px"}}></div> */}
     <Intro ref={ref} scrollToProjects={scrollToProjects} />
-    {/* <div style={{height:"1000px"}}></div> */}
-    <Projects ref={projectsRef}/>
     <Education/>
+    <Projects />
     <Contact/>
+    <div style={{color:"white",textAlign:"center",height:"100px"}}>made with ❤️ by <a href="https://www.github.com/Gen1us1100" target="_blank" style={{color:"rgb(0, 225, 255)"}}>Gen1us</a></div>
     </>
   )
 }

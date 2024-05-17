@@ -32,7 +32,7 @@ const Intro: React.ForwardRefRenderFunction<HTMLDivElement, IntroProps> = ({ scr
 
   return (
     <div ref={ref} style={{color:"white"}}>
-      <ViewportBlock onEnterViewport={() => console.log('enter')} onLeaveViewport={() => console.log('leave')} scrollToProjects={scrollToProjects} />
+      <ViewportBlock scrollToProjects={scrollToProjects} />
                
     </div>
   )
@@ -46,8 +46,9 @@ const ActualIntro : React.FC<ActualIntroProps> = ({ scrollToProjects })=>{
       <br />I identify myself as a "Developer"<br /> 
       <span style={{fontSize:"15px"}}>I believe in being able to adapt the vessel as water.</span>
       <br />
+      {/* TODO : use forward ref instead of anchor tags */}
       
-      <button style={{marginTop:"50px"}} onClick={scrollToProjects}>View Projects</button>
+      <a href='#projects'><button style={{marginTop:"50px"}} > View Projects</button></a>
       </p>
 
       <img src={img_bio}></img>

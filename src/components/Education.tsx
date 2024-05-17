@@ -2,7 +2,9 @@ import EduText from "./EduText"
 import mlcert from '../assets/ml_cert.png'
 import dbms_cert from '../assets/dbms_cert.png'
 import ShellComponent from "./shellComponent"
-const Education = () => {
+import { useInView } from 'react-intersection-observer';
+
+const EducationComponent = () => {
   return (
     <>
     <ShellComponent text={["cat Education && Certifications"]} ></ShellComponent>
@@ -12,7 +14,7 @@ const Education = () => {
     <div className="Education-secondary">
         <EduText institution="NSV" edu="SSC" score="88.4%" yop="2019"></EduText>
         <EduText institution="Fergusson College" edu="HSC" score="87.17%" yop="2021"></EduText>
-        <EduText institution="PESMCOE" edu="BE" score="8.94 CGPA" yop="2025"></EduText>
+        <EduText institution="PESMCOE" edu="BE" score="8.95 CGPA" yop="2025"></EduText>
         <hr style={{position:"absolute",width:"40%",margin:"130px"}}/>
     </div>
     <div className="certifications">
@@ -25,5 +27,19 @@ const Education = () => {
     </>
   )
 }
+const Education =()=>{
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger only once
+    threshold: 0.05,    // 10% of the component should be visible to trigger
+  });
+  return (
+    <>
+    <div ref={ref}>
+    <span>wieeee</span>
+    {inView?<EducationComponent/>:null}
+    
+    </div>
+    </>
+)}
 
 export default Education
